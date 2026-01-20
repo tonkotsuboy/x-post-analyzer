@@ -1,0 +1,39 @@
+import { NextResponse } from "next/server";
+
+import { analyzePost } from "@/lib/gemini";
+
+import type { AnalyzeRequest, AnalyzeResponse } from "@/lib/types";
+
+export async function POST(request: Request): Promise<NextResponse<AnalyzeResponse>> {
+  try {
+    const body: AnalyzeRequest = await request.json();
+    const { text, locale } = body;
+
+    if (!text || text.trim().length === 0) {
+      return NextResponse.json(
+        { success: false, error: "Text is required" },
+        { status: 400 }
+      );
+    }
+
+    if (text.length > 280) {
+      return NextResponse.json(
+        { success: false, error: "Text exceeds 280 characters" },
+        { status: 400 }
+      );
+    }
+
+    const result = await analyzePost(text, locale || "ja");
+
+    return NextResponse.json({ success: true, data: result });
+  } catch (error) {
+    console.error("Analysis error:", error);
+    return NextResponse.json(
+      {
+        success: false,
+        error: error instanceof Error ? error.message : "Unknown error",
+      },
+      { status: 500 }
+    );
+  }
+}
