@@ -76,8 +76,8 @@ function ScoreRow({ item, label }: { item: ScoreItem; label: string }): React.Re
       </Table.Td>
       <Table.Td>
         <Group gap="xs">
-          <Progress value={percentage} color={color} size="sm" style={{ flex: 1 }} />
-          <Text size="sm" fw={500} style={{ minWidth: "60px", textAlign: "right", fontVariantNumeric: "tabular-nums" }}>
+          <Progress value={percentage} color={color} size="sm" className={styles.progressBar} />
+          <Text size="sm" fw={500} className={styles.scoreText}>
             {item.score}/{item.max}
           </Text>
         </Group>
@@ -135,9 +135,9 @@ export function ScoreBreakdown({
                 <Table>
                   <Table.Thead>
                     <Table.Tr>
-                      <Table.Th style={{ width: "25%" }}>Item</Table.Th>
-                      <Table.Th style={{ width: "35%" }}>Score</Table.Th>
-                      <Table.Th style={{ width: "40%" }}>Reason</Table.Th>
+                      <Table.Th className={styles.thItem}>Item</Table.Th>
+                      <Table.Th className={styles.thScore}>Score</Table.Th>
+                      <Table.Th className={styles.thReason}>Reason</Table.Th>
                     </Table.Tr>
                   </Table.Thead>
                   <Table.Tbody>

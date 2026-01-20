@@ -59,7 +59,7 @@ export function Improvements({
                 {t("optimizedVersion")}
               </Text>
               <Card padding="md" radius="md" withBorder={true}>
-                <Text size="sm" style={{ whiteSpace: "pre-wrap" }}>
+                <Text size="sm" className={styles.optimizedText}>
                   {optimizedVersion}
                 </Text>
               </Card>

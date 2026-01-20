@@ -116,7 +116,7 @@ export default function HomePage(): React.ReactNode {
         <Stack gap="xl">
           <Group justify="space-between" align="center">
             <Box>
-              <Title order={1} style={{ textWrap: "balance" }}>{t("title")}</Title>
+              <Title order={1} className={styles.title}>{t("title")}</Title>
               <Text c="dimmed" size="lg">
                 {t("subtitle")}
               </Text>

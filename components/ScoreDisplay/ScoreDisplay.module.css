@@ -3,3 +3,7 @@
   border-radius: 8px;
   background: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
 }
+
+.scoreText {
+  font-variant-numeric: tabular-nums;
+}

@@ -1,0 +1,7 @@
+.button {
+  background-color: #1da1f2;
+
+  &:hover {
+    background-color: #1a91da;
+  }
+}

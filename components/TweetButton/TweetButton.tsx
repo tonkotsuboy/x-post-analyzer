@@ -3,6 +3,8 @@
 import { Button } from "@mantine/core";
 import { useTranslations } from "next-intl";
 
+import styles from "./TweetButton.module.css";
+
 interface TweetButtonProps {
   text: string;
 }
@@ -22,7 +24,7 @@ export function TweetButton({ text }: TweetButtonProps): React.ReactNode {
       onClick={handleTweet}
       disabled={text.length === 0}
       fullWidth={true}
-      style={{ backgroundColor: "#1DA1F2" }}
+      className={styles.button}
     >
       {t("button")}
     </Button>

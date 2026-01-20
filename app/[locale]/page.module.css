@@ -3,6 +3,10 @@
   background: light-dark(var(--mantine-color-gray-1), var(--mantine-color-dark-8));
 }
 
+.title {
+  text-wrap: balance;
+}
+
 .loading {
   display: flex;
   justify-content: center;

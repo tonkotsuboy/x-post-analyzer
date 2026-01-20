@@ -1,3 +1,25 @@
 .container {
   width: 100%;
 }
+
+.progressBar {
+  flex: 1;
+}
+
+.scoreText {
+  min-width: 60px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.thItem {
+  width: 25%;
+}
+
+.thScore {
+  width: 35%;
+}
+
+.thReason {
+  width: 40%;
+}
