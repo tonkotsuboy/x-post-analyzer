@@ -44,7 +44,7 @@ export function ScoreDisplay({ totalScore, grade }: ScoreDisplayProps): React.Re
           sections={[{ value: totalScore, color: scoreColor }]}
           label={
             <Stack align="center" gap={0}>
-              <Text size="2rem" fw={700}>
+              <Text size="2rem" fw={700} style={{ fontVariantNumeric: "tabular-nums" }}>
                 {totalScore}
               </Text>
               <Text size="sm" c="dimmed">

@@ -58,7 +58,7 @@ export function Improvements({
               <Text size="sm" fw={500} mb="xs">
                 {t("optimizedVersion")}
               </Text>
-              <Card padding="md" radius="md" withBorder={true} bg="gray.0">
+              <Card padding="md" radius="md" withBorder={true}>
                 <Text size="sm" style={{ whiteSpace: "pre-wrap" }}>
                   {optimizedVersion}
                 </Text>

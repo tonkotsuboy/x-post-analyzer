@@ -77,7 +77,7 @@ function ScoreRow({ item, label }: { item: ScoreItem; label: string }): React.Re
       <Table.Td>
         <Group gap="xs">
           <Progress value={percentage} color={color} size="sm" style={{ flex: 1 }} />
-          <Text size="sm" fw={500} style={{ minWidth: "60px", textAlign: "right" }}>
+          <Text size="sm" fw={500} style={{ minWidth: "60px", textAlign: "right", fontVariantNumeric: "tabular-nums" }}>
             {item.score}/{item.max}
           </Text>
         </Group>
