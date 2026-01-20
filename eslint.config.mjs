@@ -3,6 +3,7 @@ import nextVitals from "eslint-config-next/core-web-vitals";
 import nextTs from "eslint-config-next/typescript";
 import reactPlugin from "eslint-plugin-react";
 import importPlugin from "eslint-plugin-import";
+import noInlineStyles from "eslint-plugin-no-inline-styles";
 import prettier from "eslint-config-prettier";
 
 const eslintConfig = defineConfig([
@@ -20,6 +21,7 @@ const eslintConfig = defineConfig([
     plugins: {
       react: reactPlugin,
       import: importPlugin,
+      "no-inline-styles": noInlineStyles,
     },
     settings: {
       "import/resolver": {
@@ -149,6 +151,9 @@ const eslintConfig = defineConfig([
       "@typescript-eslint/require-await": "off",
       "@typescript-eslint/strict-boolean-expressions": "error",
       "@typescript-eslint/no-unsafe-argument": "error",
+
+      // No inline styles
+      "no-inline-styles/no-inline-styles": "error",
 
       // React rules
       "react/jsx-curly-brace-presence": "error",
