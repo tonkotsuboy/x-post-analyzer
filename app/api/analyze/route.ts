@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 
-import { analyzePost } from "@/lib/gemini";
+import { analyzePost } from "../../../lib/gemini";
 
-import type { AnalyzeRequest, AnalyzeResponse } from "@/lib/types";
+import type { AnalyzeRequest, AnalyzeResponse } from "../../../lib/types";
 
 export async function POST(request: Request): Promise<NextResponse<AnalyzeResponse>> {
   try {

@@ -15,7 +15,7 @@ import { useTranslations } from "next-intl";
 
 import styles from "./ScoreBreakdown.module.css";
 
-import type { Penalties, ScoreBreakdown as ScoreBreakdownType, ScoreItem } from "@/lib/types";
+import type { Penalties, ScoreBreakdown as ScoreBreakdownType, ScoreItem } from "../../lib/types";
 
 interface ScoreBreakdownProps {
   breakdown: ScoreBreakdownType;

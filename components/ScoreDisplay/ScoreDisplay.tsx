@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 
 import styles from "./ScoreDisplay.module.css";
 
-import type { Grade } from "@/lib/types";
+import type { Grade } from "../../lib/types";
 
 interface ScoreDisplayProps {
   totalScore: number;

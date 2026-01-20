@@ -16,15 +16,15 @@ import {
 import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useRef, useState, useTransition } from "react";
 
-import { Improvements } from "@/components/Improvements";
-import { LanguageSwitcher } from "@/components/LanguageSwitcher";
-import { ScoreBreakdown } from "@/components/ScoreBreakdown";
-import { ScoreDisplay } from "@/components/ScoreDisplay";
-import { TweetInput } from "@/components/TweetInput";
+import { Improvements } from "../../components/Improvements";
+import { LanguageSwitcher } from "../../components/LanguageSwitcher";
+import { ScoreBreakdown } from "../../components/ScoreBreakdown";
+import { ScoreDisplay } from "../../components/ScoreDisplay";
+import { TweetInput } from "../../components/TweetInput";
 
 import styles from "./page.module.css";
 
-import type { AnalysisResult, AnalyzeResponse } from "@/lib/types";
+import type { AnalysisResult, AnalyzeResponse } from "../../lib/types";
 
 const PROGRESS_STEPS = [
   { progress: 10, key: "step1" },

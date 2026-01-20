@@ -3,7 +3,6 @@
 import {
   Badge,
   Box,
-  Button,
   Card,
   Divider,
   Group,
@@ -13,11 +12,11 @@ import {
 } from "@mantine/core";
 import { useTranslations } from "next-intl";
 
-import { TweetButton } from "@/components/TweetButton";
+import { TweetButton } from "../TweetButton";
 
 import styles from "./Improvements.module.css";
 
-import type { Improvement, ImprovedVersion } from "@/lib/types";
+import type { ImprovedVersion, Improvement } from "../../lib/types";
 
 interface ImprovementsProps {
   improvements: Improvement[];
