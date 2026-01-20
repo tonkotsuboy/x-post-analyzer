@@ -1,0 +1,10 @@
+.page {
+  min-height: 100vh;
+  background: light-dark(var(--mantine-color-gray-1), var(--mantine-color-dark-8));
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
