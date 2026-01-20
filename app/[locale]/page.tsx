@@ -114,6 +114,19 @@ export default function HomePage(): React.ReactNode {
               <Text c="dimmed" size="lg">
                 {t("subtitle")}
               </Text>
+              <Text c="dimmed" size="sm" mt="xs">
+                {t("basedOn")}{" "}
+                <Text
+                  component="a"
+                  href="https://github.com/xai-org/x-algorithm"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  c="blue"
+                  td="underline"
+                >
+                  X Recommendation Algorithm
+                </Text>
+              </Text>
             </Box>
             <LanguageSwitcher />
           </Group>

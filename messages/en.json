@@ -5,7 +5,8 @@
   },
   "header": {
     "title": "X Post Analyzer",
-    "subtitle": "Analyze Tweet Viral Potential"
+    "subtitle": "Analyze Tweet Viral Potential",
+    "basedOn": "Based on:"
   },
   "input": {
     "placeholder": "Enter your post...",

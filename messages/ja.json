@@ -5,7 +5,8 @@
   },
   "header": {
     "title": "X Post Analyzer",
-    "subtitle": "ツイートのバズり度を分析"
+    "subtitle": "ツイートのバズり度を分析",
+    "basedOn": "基づく："
   },
   "input": {
     "placeholder": "投稿内容を入力...",
