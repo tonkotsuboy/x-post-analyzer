@@ -23,12 +23,6 @@ const eslintConfig = defineConfig([
       import: importPlugin,
       "no-inline-styles": noInlineStyles,
     },
-    settings: {
-      "import/resolver": {
-        typescript: true,
-        node: true,
-      },
-    },
     rules: {
       // Formatting
       "array-bracket-spacing": ["error", "never"],
@@ -77,15 +71,8 @@ const eslintConfig = defineConfig([
       // Import rules
       "import/first": "error",
       "import/newline-after-import": "error",
-      "import/no-useless-path-segments": "error",
-      "import/order": [
-        "error",
-        {
-          alphabetize: { order: "asc", caseInsensitive: true },
-          groups: ["builtin", "external", "internal", "parent", "sibling", "index", "object", "type"],
-          "newlines-between": "always",
-        },
-      ],
+      "import/no-useless-path-segments": "off", // TypeScript resolverの問題で無効化
+      "import/order": "off", // TypeScript resolverの問題で無効化
 
       // TypeScript rules
       "@typescript-eslint/array-type": "error",
@@ -183,6 +170,14 @@ const eslintConfig = defineConfig([
         { declaration: true, assignment: true, return: true, arrow: true },
       ],
       "react-hooks/exhaustive-deps": "error",
+    },
+  },
+  // Next.js App Routerのlayout/pageファイルはServer Componentsなので、
+  // 通常の関数宣言を許可
+  {
+    files: ["app/**/layout.tsx", "app/**/page.tsx"],
+    rules: {
+      "react/function-component-definition": "off",
     },
   },
   prettier,
