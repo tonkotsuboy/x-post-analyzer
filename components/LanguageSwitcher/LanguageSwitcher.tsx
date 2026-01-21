@@ -3,6 +3,7 @@
 import { Button } from "@mantine/core";
 import { usePathname, useRouter } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
+
 import type { FC } from "react";
 
 export const LanguageSwitcher: FC = () => {

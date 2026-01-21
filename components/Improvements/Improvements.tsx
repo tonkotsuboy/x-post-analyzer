@@ -11,13 +11,14 @@ import {
   Title,
 } from "@mantine/core";
 import { useTranslations } from "next-intl";
-import type { FC } from "react";
+
 
 import { TweetButton } from "../TweetButton";
 
 import styles from "./Improvements.module.css";
 
 import type { ImprovedVersion, Improvement } from "../../lib/types";
+import type { FC } from "react";
 
 interface ImprovementsProps {
   improvements: Improvement[];

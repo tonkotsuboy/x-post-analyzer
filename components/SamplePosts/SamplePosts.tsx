@@ -1,11 +1,13 @@
 "use client";
 
-import { SimpleGrid, Image, Title } from "@mantine/core";
+import { Image, SimpleGrid, Title } from "@mantine/core";
 import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
-import type { FC } from "react";
+
 import { ImageModal } from "./ImageModal";
 import styles from "./SamplePosts.module.css";
+
+import type { FC } from "react";
 
 export const SamplePosts: FC = () => {
   const locale = useLocale();

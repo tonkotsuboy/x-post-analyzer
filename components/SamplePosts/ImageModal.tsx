@@ -1,8 +1,9 @@
 "use client";
 
-import { Modal, Image, ActionIcon, Box } from "@mantine/core";
+import { ActionIcon, Box, Image, Modal } from "@mantine/core";
 import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
 import { useEffect } from "react";
+
 import type { FC } from "react";
 
 interface ImageModalProps {
@@ -44,7 +45,7 @@ export const ImageModal: FC<ImageModalProps> = ({
       opened={imageSrc !== null}
       onClose={onClose}
       size="auto"
-      centered
+      centered={true}
       padding={0}
       withCloseButton={false}
       overlayProps={{ backgroundOpacity: 0.9, blur: 3 }}

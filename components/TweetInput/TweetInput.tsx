@@ -4,11 +4,13 @@ import { Alert, Box, Button, Collapse, Group, PasswordInput, Stack, Text, Textar
 import { IconAlertTriangle } from "@tabler/icons-react";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
-import type { FC } from "react";
+
 
 import { getGraphemeCount, MAX_TWEET_LENGTH } from "../../lib/utils";
 
 import styles from "./TweetInput.module.css";
+
+import type { FC } from "react";
 
 interface TweetInputProps {
   value: string;

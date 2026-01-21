@@ -2,11 +2,13 @@
 
 import { Button } from "@mantine/core";
 import { useTranslations } from "next-intl";
-import type { FC } from "react";
+
 
 import { getGraphemeCount } from "../../lib/utils";
 
 import styles from "./TweetButton.module.css";
+
+import type { FC } from "react";
 
 interface TweetButtonProps {
   text: string;

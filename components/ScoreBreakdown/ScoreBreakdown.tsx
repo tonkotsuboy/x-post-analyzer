@@ -12,11 +12,12 @@ import {
   Title,
 } from "@mantine/core";
 import { useTranslations } from "next-intl";
-import type { FC } from "react";
+
 
 import styles from "./ScoreBreakdown.module.css";
 
 import type { Penalties, ScoreBreakdown as ScoreBreakdownType, ScoreItem } from "../../lib/types";
+import type { FC } from "react";
 
 interface ScoreBreakdownProps {
   breakdown: ScoreBreakdownType;
