@@ -30,9 +30,9 @@ export async function generateMetadata({
     metadataBase: new URL(baseUrl),
     title: metadata.title,
     description: metadata.description,
-    authors: [{ name: "X Post Analyzer" }],
-    creator: "X Post Analyzer",
-    publisher: "X Post Analyzer",
+    authors: [{ name: "Takeshi Kano", url: "https://x.com/tonkotsuboy_com" }],
+    creator: "Takeshi Kano",
+    publisher: "Takeshi Kano",
     robots: {
       index: true,
       follow: true,
