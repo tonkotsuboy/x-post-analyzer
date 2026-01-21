@@ -1,0 +1,22 @@
+.modalContainer {
+  position: relative;
+}
+
+.modalImage {
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.navigationButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.previousButton {
+  left: 16px;
+}
+
+.nextButton {
+  right: 16px;
+}

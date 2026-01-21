@@ -4,6 +4,8 @@ import { ActionIcon, Box, Image, Modal } from "@mantine/core";
 import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
 import { useEffect } from "react";
 
+import styles from "./ImageModal.module.css";
+
 import type { FC } from "react";
 
 interface ImageModalProps {
@@ -50,13 +52,13 @@ export const ImageModal: FC<ImageModalProps> = ({
       withCloseButton={false}
       overlayProps={{ backgroundOpacity: 0.9, blur: 3 }}
     >
-      {imageSrc && (
-        <Box style={{ position: "relative" }}>
+      {imageSrc !== null && (
+        <Box className={styles.modalContainer}>
           <Image
             src={imageSrc}
             alt="Sample post (enlarged)"
             fit="contain"
-            style={{ maxWidth: "90vw", maxHeight: "90vh" }}
+            className={styles.modalImage}
           />
 
           {canGoPrevious && (
@@ -65,12 +67,7 @@ export const ImageModal: FC<ImageModalProps> = ({
               size="lg"
               radius="xl"
               onClick={onPrevious}
-              style={{
-                position: "absolute",
-                left: 16,
-                top: "50%",
-                transform: "translateY(-50%)",
-              }}
+              className={`${styles.navigationButton} ${styles.previousButton}`}
             >
               <IconChevronLeft size={24} />
             </ActionIcon>
@@ -82,12 +79,7 @@ export const ImageModal: FC<ImageModalProps> = ({
               size="lg"
               radius="xl"
               onClick={onNext}
-              style={{
-                position: "absolute",
-                right: 16,
-                top: "50%",
-                transform: "translateY(-50%)",
-              }}
+              className={`${styles.navigationButton} ${styles.nextButton}`}
             >
               <IconChevronRight size={24} />
             </ActionIcon>

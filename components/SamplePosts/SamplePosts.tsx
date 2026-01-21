@@ -47,7 +47,6 @@ export const SamplePosts: FC = () => {
             alt={`Sample post ${index + 1}`}
             className={styles.thumbnail}
             onClick={() => setSelectedIndex(index)}
-            style={{ cursor: "pointer" }}
           />
         ))}
       </SimpleGrid>

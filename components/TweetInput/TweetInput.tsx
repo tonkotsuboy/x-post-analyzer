@@ -31,7 +31,7 @@ export const TweetInput: FC<TweetInputProps> = ({
 }) => {
   const t = useTranslations("input");
   const tCustomApiKey = useTranslations("customApiKey");
-  const [opened, setOpened] = useState(false);
+  const [isOpened, setOpened] = useState(false);
   const charCount = getGraphemeCount(value);
   const isOverLimit = charCount > MAX_TWEET_LENGTH;
   const isEmpty = charCount === 0;
@@ -71,12 +71,12 @@ export const TweetInput: FC<TweetInputProps> = ({
         <Button
           variant="subtle"
           size="sm"
-          onClick={() => setOpened(!opened)}
+          onClick={() => setOpened(!isOpened)}
         >
           {tCustomApiKey('toggle')}
         </Button>
 
-        <Collapse in={opened}>
+        <Collapse in={isOpened}>
           <Stack gap="sm" mt="md">
             <Alert icon={<IconAlertTriangle />} color="yellow">
               {tCustomApiKey('warning')}

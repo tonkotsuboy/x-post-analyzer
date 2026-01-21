@@ -20,10 +20,10 @@ export async function analyzePost(
 ): Promise<AnalysisResult> {
   let genAI: GoogleGenerativeAI | null;
 
-  if (customApiKey) {
+  if (customApiKey !== undefined && customApiKey !== "") {
     try {
       genAI = new GoogleGenerativeAI(customApiKey);
-    } catch (error) {
+    } catch {
       throw new Error("CUSTOM_API_KEY_INVALID");
     }
   } else {

@@ -36,7 +36,7 @@ export async function POST(request: Request): Promise<NextResponse<AnalyzeRespon
       );
     }
 
-    const result = await analyzePost(text, locale ?? "ja", customApiKey);
+    const result = await analyzePost(text, locale, customApiKey);
 
     return NextResponse.json({ success: true, data: result });
   } catch (error) {
