@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "X Post Analyzer - Xのおすすめタイムラインに表示される可能性を分析",
-    "description": "Xのアルゴリズムに基づいてあなたの投稿のバズり度を採点し、改善案を提示します"
+    "description": "Xのアルゴリズムに基づいてあなたの投稿のレコメンドスコアを算出し、改善案を提示します"
   },
   "header": {
     "title": "X Post Analyzer",

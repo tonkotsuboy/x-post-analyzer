@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "X Post Analyzer - Analyze X Timeline Recommendation Potential",
-    "description": "Score your post's viral potential based on X's algorithm and get improvement suggestions"
+    "description": "Calculate your post's recommendation score based on X's algorithm and get improvement suggestions"
   },
   "header": {
     "title": "X Post Analyzer",

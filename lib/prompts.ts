@@ -40,8 +40,8 @@ Score each factor and provide reasons. Response language: ${isJapanese ? "Japane
 - reportRisk (-15 to -30): Policy violations, harmful content
 
 ## Grading Scale
-- S: 90-100 (Exceptional viral potential)
-- A: 80-89 (High viral potential)
+- S: 90-100 (Exceptional recommendation potential)
+- A: 80-89 (High recommendation potential)
 - B: 70-79 (Good engagement expected)
 - C: 60-69 (Average performance)
 - D: 40-59 (Below average)
