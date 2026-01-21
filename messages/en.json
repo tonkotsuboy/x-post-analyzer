@@ -5,7 +5,7 @@
   },
   "header": {
     "title": "X Post Analyzer",
-    "subtitle": "Analyze X Timeline Recommendation Potential",
+    "subtitle": "Analyze your post's potential to appear on the For You timeline based on X's official algorithm, and get scoring with improvement suggestions",
     "basedOn": "Based on:"
   },
   "input": {
