@@ -16,12 +16,15 @@
     "cancel": "Cancel"
   },
   "customApiKey": {
+    "settingsTitle": "Settings",
     "toggle": "Advanced Settings",
     "label": "Gemini API Key",
     "placeholder": "AIz...",
     "warning": "Using your own API key will consume your API quota and cost. The key is stored in memory only and will be cleared on page reload.",
     "httpsRequired": "HTTPS connection is required in production",
-    "helpText": "Enter your Gemini API key (leave blank to use default key)"
+    "helpText": "Enter your Gemini API key (leave blank to use default key)",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password"
   },
   "score": {
     "title": "Total Score",
@@ -82,7 +85,8 @@
     "retry": "Retry"
   },
   "language": {
-    "switch": "日本語"
+    "switch": "日本語",
+    "selectLanguage": "Select language"
   },
   "progress": {
     "start": "Starting analysis...",

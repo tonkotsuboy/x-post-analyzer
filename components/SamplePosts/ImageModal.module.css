@@ -13,6 +13,10 @@
   transform: translateY(-50%);
 }
 
+.navigationButton:active {
+  transform: translateY(-50%);
+}
+
 .previousButton {
   left: 16px;
 }

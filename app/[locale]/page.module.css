@@ -3,6 +3,18 @@
   background: light-dark(var(--mantine-color-gray-1), var(--mantine-color-dark-8));
 }
 
+.header {
+  position: relative;
+}
+
+.headerActions {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  gap: 8px;
+}
+
 .title {
   text-wrap: balance;
 }

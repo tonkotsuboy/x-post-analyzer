@@ -16,12 +16,15 @@
     "cancel": "分析を中止"
   },
   "customApiKey": {
+    "settingsTitle": "設定",
     "toggle": "詳細設定",
     "label": "Gemini APIキー",
     "placeholder": "AIz...",
     "warning": "独自のAPIキーを使用すると、あなたのAPIクォータとコストが消費されます。キーはメモリ内のみに保持され、ページリロード時にクリアされます。",
     "httpsRequired": "本番環境ではHTTPS接続が必要です",
-    "helpText": "Gemini APIキーを入力してください（空欄の場合はデフォルトキーを使用）"
+    "helpText": "Gemini APIキーを入力してください（空欄の場合はデフォルトキーを使用）",
+    "showPassword": "パスワードを表示",
+    "hidePassword": "パスワードを非表示"
   },
   "score": {
     "title": "総合スコア",
@@ -82,7 +85,8 @@
     "retry": "再試行"
   },
   "language": {
-    "switch": "English"
+    "switch": "English",
+    "selectLanguage": "言語を選択"
   },
   "progress": {
     "start": "分析を開始中...",

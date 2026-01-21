@@ -1,0 +1,137 @@
+.iconButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  background: transparent;
+  border: 1px solid var(--mantine-color-default-border);
+  border-radius: var(--mantine-radius-md);
+  color: var(--mantine-color-text);
+  cursor: pointer;
+  transition: background-color 150ms ease, border-color 150ms ease;
+  anchor-name: --settings-anchor;
+}
+
+.iconButton:hover {
+  background-color: var(--mantine-color-default-hover);
+}
+
+.iconButton:focus-visible {
+  outline: 2px solid var(--mantine-primary-color-filled);
+  outline-offset: 2px;
+}
+
+.popover {
+  position: absolute;
+  position-anchor: --settings-anchor;
+  inset: unset;
+  top: anchor(bottom);
+  right: anchor(right);
+  margin-top: 8px;
+  padding: 16px;
+  background: var(--mantine-color-body);
+  border: 1px solid var(--mantine-color-default-border);
+  border-radius: var(--mantine-radius-md);
+  box-shadow: var(--mantine-shadow-md);
+  width: min(360px, calc(100vw - 32px));
+  position-try-fallbacks: --to-left;
+}
+
+@position-try --to-left {
+  right: unset;
+  left: anchor(left);
+}
+
+.popover::backdrop {
+  background: transparent;
+}
+
+.title {
+  margin: 0 0 12px;
+  font-size: var(--mantine-font-size-md);
+  font-weight: 600;
+  color: var(--mantine-color-text);
+}
+
+.warning {
+  display: flex;
+  gap: 10px;
+  padding: 12px;
+  margin-bottom: 12px;
+  background-color: var(--mantine-color-yellow-light);
+  border-radius: var(--mantine-radius-sm);
+  font-size: var(--mantine-font-size-sm);
+  color: var(--mantine-color-yellow-light-color);
+}
+
+.warningIcon {
+  flex-shrink: 0;
+  color: var(--mantine-color-yellow-filled);
+}
+
+.httpsWarning {
+  margin-top: 8px;
+  font-weight: 700;
+  color: var(--mantine-color-red-filled);
+}
+
+.label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: var(--mantine-font-size-sm);
+  font-weight: 500;
+  color: var(--mantine-color-text);
+}
+
+.inputWrapper {
+  position: relative;
+}
+
+.input {
+  width: 100%;
+  padding: 10px 40px 10px 12px;
+  background: var(--mantine-color-default);
+  border: 1px solid var(--mantine-color-default-border);
+  border-radius: var(--mantine-radius-sm);
+  font-size: var(--mantine-font-size-sm);
+  color: var(--mantine-color-text);
+}
+
+.input::placeholder {
+  color: var(--mantine-color-placeholder);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--mantine-primary-color-filled);
+}
+
+.toggleButton {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: var(--mantine-radius-sm);
+  color: var(--mantine-color-dimmed);
+  cursor: pointer;
+}
+
+.toggleButton:hover {
+  background-color: var(--mantine-color-default-hover);
+}
+
+.helpText {
+  margin-top: 6px;
+  font-size: var(--mantine-font-size-xs);
+  color: var(--mantine-color-dimmed);
+}

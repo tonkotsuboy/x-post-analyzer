@@ -1,0 +1,84 @@
+.iconButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  background: transparent;
+  border: 1px solid var(--mantine-color-default-border);
+  border-radius: var(--mantine-radius-md);
+  color: var(--mantine-color-text);
+  cursor: pointer;
+  transition: background-color 150ms ease, border-color 150ms ease;
+  anchor-name: --language-anchor;
+}
+
+.iconButton:hover {
+  background-color: var(--mantine-color-default-hover);
+}
+
+.iconButton:focus-visible {
+  outline: 2px solid var(--mantine-primary-color-filled);
+  outline-offset: 2px;
+}
+
+.popover {
+  position: absolute;
+  position-anchor: --language-anchor;
+  inset: unset;
+  top: anchor(bottom);
+  left: anchor(left);
+  margin-top: 8px;
+  padding: 8px;
+  background: var(--mantine-color-body);
+  border: 1px solid var(--mantine-color-default-border);
+  border-radius: var(--mantine-radius-md);
+  box-shadow: var(--mantine-shadow-md);
+  min-width: 140px;
+  position-try-fallbacks: --to-right;
+}
+
+@position-try --to-right {
+  left: unset;
+  right: anchor(right);
+}
+
+.popover::backdrop {
+  background: transparent;
+}
+
+.languageButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 14px;
+  background: transparent;
+  border: none;
+  border-radius: var(--mantine-radius-sm);
+  color: var(--mantine-color-text);
+  font-size: var(--mantine-font-size-sm);
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 150ms ease;
+}
+
+.languageButton:hover {
+  background-color: var(--mantine-color-default-hover);
+}
+
+.languageButton:focus-visible {
+  outline: 2px solid var(--mantine-primary-color-filled);
+  outline-offset: -2px;
+}
+
+.languageButtonActive {
+  font-weight: 600;
+  color: var(--mantine-primary-color-filled);
+}
+
+.flag {
+  font-size: 1.2em;
+  line-height: 1;
+}

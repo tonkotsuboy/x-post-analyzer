@@ -5,8 +5,6 @@ import {
   Box,
   Button,
   Container,
-  Divider,
-  Group,
   Loader,
   Progress,
   Stack,
@@ -21,6 +19,7 @@ import { LanguageSwitcher } from "../../components/LanguageSwitcher/LanguageSwit
 import { SamplePosts } from "../../components/SamplePosts/SamplePosts";
 import { ScoreBreakdown } from "../../components/ScoreBreakdown/ScoreBreakdown";
 import { ScoreDisplay } from "../../components/ScoreDisplay/ScoreDisplay";
+import { SettingsPopover } from "../../components/SettingsPopover/SettingsPopover";
 import { ShareResultButton } from "../../components/ShareResultButton/ShareResultButton";
 import { TweetInput } from "../../components/TweetInput/TweetInput";
 
@@ -165,37 +164,37 @@ export default function HomePage(): React.ReactNode {
     <Box className={styles.page}>
       <Container size="md" py="xl">
         <Stack gap="xl">
-          <Group justify="space-between" align="center">
-            <Box>
-              <Title order={1} className={styles.title}>{t("title")}</Title>
-              <Text c="dimmed" size="lg">
-                {t("subtitle")}
-              </Text>
-              <Text
-                component="a"
-                href="https://github.com/xai-org/x-algorithm"
-                target="_blank"
-                rel="noopener noreferrer"
-                c="blue"
-                td="underline"
-                size="sm"
-                mt="xs"
-              >
-                X Recommendation Algorithm
-              </Text>
-            </Box>
-            <LanguageSwitcher />
-          </Group>
-
-          <Divider />
+          <Box className={styles.header}>
+            <div className={styles.headerActions}>
+              <LanguageSwitcher />
+              <SettingsPopover
+                customApiKey={customApiKey}
+                onCustomApiKeyChange={setCustomApiKey}
+              />
+            </div>
+            <Title order={1} className={styles.title}>{t("title")}</Title>
+            <Text c="dimmed" size="lg">
+              {t("subtitle")}
+            </Text>
+            <Text
+              component="a"
+              href="https://github.com/xai-org/x-algorithm"
+              target="_blank"
+              rel="noopener noreferrer"
+              c="blue"
+              td="underline"
+              size="sm"
+              mt="xs"
+            >
+              X Recommendation Algorithm
+            </Text>
+          </Box>
 
           <TweetInput
             value={text}
             onChange={setText}
             onAnalyze={handleAnalyze}
             isLoading={isAnalyzing}
-            customApiKey={customApiKey}
-            onCustomApiKeyChange={setCustomApiKey}
           />
 
           {result === null && !isAnalyzing && <SamplePosts />}

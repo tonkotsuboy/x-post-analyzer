@@ -1,10 +1,7 @@
 "use client";
 
-import { Alert, Box, Button, Collapse, Group, PasswordInput, Stack, Text, Textarea } from "@mantine/core";
-import { IconAlertTriangle } from "@tabler/icons-react";
+import { Box, Button, Group, Text, Textarea } from "@mantine/core";
 import { useTranslations } from "next-intl";
-import { useState } from "react";
-
 
 import { getGraphemeCount, MAX_TWEET_LENGTH } from "../../lib/utils";
 
@@ -17,8 +14,6 @@ interface TweetInputProps {
   onChange: (value: string) => void;
   onAnalyze: () => void;
   isLoading: boolean;
-  customApiKey: string;
-  onCustomApiKeyChange: (value: string) => void;
 }
 
 export const TweetInput: FC<TweetInputProps> = ({
@@ -26,16 +21,11 @@ export const TweetInput: FC<TweetInputProps> = ({
   onChange,
   onAnalyze,
   isLoading,
-  customApiKey,
-  onCustomApiKeyChange,
 }) => {
   const t = useTranslations("input");
-  const tCustomApiKey = useTranslations("customApiKey");
-  const [isOpened, setOpened] = useState(false);
   const charCount = getGraphemeCount(value);
   const isOverLimit = charCount > MAX_TWEET_LENGTH;
   const isEmpty = charCount === 0;
-  const isHttps = typeof window !== 'undefined' && window.location.protocol === 'https:';
 
   return (
     <Box className={styles.container}>
@@ -66,35 +56,6 @@ export const TweetInput: FC<TweetInputProps> = ({
           {isLoading ? t("analyzing") : t("analyzeButton")}
         </Button>
       </Group>
-
-      <Box mt="md">
-        <Button
-          variant="subtle"
-          size="sm"
-          onClick={() => setOpened(!isOpened)}
-        >
-          {tCustomApiKey('toggle')}
-        </Button>
-
-        <Collapse in={isOpened}>
-          <Stack gap="sm" mt="md">
-            <Alert icon={<IconAlertTriangle />} color="yellow">
-              {tCustomApiKey('warning')}
-              {!isHttps && (
-                <Text c="red" fw={700} mt="xs">{tCustomApiKey('httpsRequired')}</Text>
-              )}
-            </Alert>
-
-            <PasswordInput
-              label={tCustomApiKey('label')}
-              placeholder={tCustomApiKey('placeholder')}
-              value={customApiKey}
-              onChange={(e) => onCustomApiKeyChange(e.currentTarget.value)}
-              description={tCustomApiKey('helpText')}
-            />
-          </Stack>
-        </Collapse>
-      </Box>
     </Box>
   );
 };
