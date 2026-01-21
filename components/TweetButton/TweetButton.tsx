@@ -3,6 +3,8 @@
 import { Button } from "@mantine/core";
 import { useTranslations } from "next-intl";
 
+import { getGraphemeCount } from "../../lib/utils";
+
 import styles from "./TweetButton.module.css";
 
 interface TweetButtonProps {
@@ -22,7 +24,7 @@ export function TweetButton({ text }: TweetButtonProps): React.ReactNode {
     <Button
       size="lg"
       onClick={handleTweet}
-      disabled={text.length === 0}
+      disabled={getGraphemeCount(text) === 0}
       fullWidth={true}
       className={styles.button}
     >

@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 
 import { analyzePost } from "../../../lib/gemini";
+import { getGraphemeCount, MAX_TWEET_LENGTH } from "../../../lib/utils";
 
 import type { AnalyzeRequest, AnalyzeResponse } from "../../../lib/types";
 
@@ -16,7 +17,8 @@ export async function POST(request: Request): Promise<NextResponse<AnalyzeRespon
       );
     }
 
-    if (text.length > 280) {
+    const charCount = getGraphemeCount(text);
+    if (charCount > MAX_TWEET_LENGTH) {
       return NextResponse.json(
         { success: false, error: "Text exceeds 280 characters" },
         { status: 400 }
