@@ -63,7 +63,7 @@ export const Improvements: FC<ImprovementsProps> = ({
                       <Text size="sm" fw={500} mb="xs" c="dimmed">
                         {t("improvedText")}
                       </Text>
-                      <Card padding="md" radius="md" withBorder={true} bg="gray.0">
+                      <Card padding="md" radius="md" withBorder={true} className={styles.textCard}>
                         <Text size="sm" className={styles.optimizedText}>
                           {version.text}
                         </Text>
