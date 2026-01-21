@@ -3,7 +3,28 @@ import "./globals.css";
 
 import { ColorSchemeScript, createTheme, MantineProvider } from "@mantine/core";
 
+import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#1a1b1e" },
+  ],
+};
+
+export const metadata: Metadata = {
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "X Post Analyzer",
+  },
+};
 
 const theme = createTheme({
   primaryColor: "blue",

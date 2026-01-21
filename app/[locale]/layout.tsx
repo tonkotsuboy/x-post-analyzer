@@ -23,12 +23,49 @@ export async function generateMetadata({
   const messages = await getMessages({ locale });
   const metadata = messages.metadata as { title: string; description: string };
 
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? "http://localhost:3000";
+  const canonicalUrl = `${baseUrl}/${locale}`;
+
   return {
+    metadataBase: new URL(baseUrl),
     title: metadata.title,
     description: metadata.description,
+    keywords: [
+      "X",
+      "Twitter",
+      "投稿分析",
+      "レコメンド",
+      "エンゲージメント",
+      "SNS",
+      "ソーシャルメディア",
+      "post analyzer",
+      "recommendation",
+      "engagement",
+      "social media",
+    ],
+    authors: [{ name: "X Post Analyzer" }],
+    creator: "X Post Analyzer",
+    publisher: "X Post Analyzer",
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+      },
+    },
+    alternates: {
+      canonical: canonicalUrl,
+      languages: {
+        ja: `${baseUrl}/ja`,
+        en: `${baseUrl}/en`,
+      },
+    },
     openGraph: {
       title: metadata.title,
       description: metadata.description,
+      url: canonicalUrl,
+      siteName: "X Post Analyzer",
       type: "website",
       locale: locale === "ja" ? "ja_JP" : "en_US",
       images: [
@@ -45,6 +82,7 @@ export async function generateMetadata({
       title: metadata.title,
       description: metadata.description,
       images: ["/opengraph-image.png"],
+      creator: "@tonkotsuboy_com",
     },
   };
 }
