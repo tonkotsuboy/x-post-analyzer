@@ -10,13 +10,26 @@ if (apiKey === undefined || apiKey === "") {
   console.warn("GEMINI_API_KEY is not set");
 }
 
-const genAI =
+const defaultGenAI =
   apiKey !== undefined && apiKey !== "" ? new GoogleGenerativeAI(apiKey) : null;
 
 export async function analyzePost(
   text: string,
-  locale: string
+  locale: string,
+  customApiKey?: string
 ): Promise<AnalysisResult> {
+  let genAI: GoogleGenerativeAI | null;
+
+  if (customApiKey) {
+    try {
+      genAI = new GoogleGenerativeAI(customApiKey);
+    } catch (error) {
+      throw new Error("CUSTOM_API_KEY_INVALID");
+    }
+  } else {
+    genAI = defaultGenAI;
+  }
+
   if (!genAI) {
     throw new Error("API_KEY_NOT_CONFIGURED");
   }

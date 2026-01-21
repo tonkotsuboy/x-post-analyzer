@@ -65,6 +65,7 @@ export interface AnalysisResult {
 export interface AnalyzeRequest {
   text: string;
   locale: string;
+  customApiKey?: string;
 }
 
 export interface AnalyzeResponse {

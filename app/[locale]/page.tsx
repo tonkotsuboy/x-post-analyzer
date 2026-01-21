@@ -43,6 +43,8 @@ function getErrorTranslationKey(errorCode: string): string {
     RATE_LIMIT_EXCEEDED: "rateLimitExceeded",
     NETWORK_ERROR: "networkError",
     ANALYSIS_FAILED: "analysisFailed",
+    CUSTOM_API_KEY_INVALID: "customApiKeyInvalid",
+    CUSTOM_API_KEY_REQUIRES_HTTPS: "customApiKeyRequiresHttps",
   };
 
   return errorMap[errorCode] ?? "apiError";
@@ -56,6 +58,7 @@ export default function HomePage(): React.ReactNode {
   const locale = useLocale();
 
   const [text, setText] = useState("");
+  const [customApiKey, setCustomApiKey] = useState("");
   const [isPending, startTransition] = useTransition();
   const [result, setResult] = useState<AnalysisResult | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -91,7 +94,7 @@ export default function HomePage(): React.ReactNode {
         const response = await fetch("/api/analyze", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ text, locale }),
+          body: JSON.stringify({ text, locale, customApiKey }),
           signal,
         });
 
@@ -154,9 +157,11 @@ export default function HomePage(): React.ReactNode {
             onChange={setText}
             onAnalyze={handleAnalyze}
             isLoading={isPending}
+            customApiKey={customApiKey}
+            onCustomApiKeyChange={setCustomApiKey}
           />
 
-          {result === null && <SamplePosts />}
+          {result === null && !isPending && <SamplePosts />}
 
           {error !== null && (
             <Alert color="red" title="Error">

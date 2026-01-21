@@ -15,6 +15,14 @@
     "analyzing": "Analyzing...",
     "cancel": "Cancel"
   },
+  "customApiKey": {
+    "toggle": "Advanced Settings",
+    "label": "Gemini API Key",
+    "placeholder": "AIz...",
+    "warning": "Using your own API key will consume your API quota and cost. The key is stored in memory only and will be cleared on page reload.",
+    "httpsRequired": "HTTPS connection is required in production",
+    "helpText": "Enter your Gemini API key (leave blank to use default key)"
+  },
   "score": {
     "title": "Total Score",
     "grade": "Grade",
@@ -56,6 +64,10 @@
     "button": "Tweet",
     "success": "Tweet composer opened"
   },
+  "share": {
+    "button": "Share on X",
+    "text": "I analyzed my post with X's algorithm and got {score} points ({grade} rank)!\n\nHow about your post?\n\nhttps://x.kano.codes #XPostAnalyzer"
+  },
   "error": {
     "empty": "Please enter your post content",
     "tooLong": "Please keep it under 280 characters",
@@ -65,6 +77,8 @@
     "rateLimitExceeded": "Rate limit exceeded. Please try again later",
     "networkError": "Network error occurred. Please check your connection",
     "analysisFailed": "Analysis failed. Please try again",
+    "customApiKeyInvalid": "Custom API key is invalid",
+    "customApiKeyRequiresHttps": "Custom API key requires HTTPS connection",
     "retry": "Retry"
   },
   "language": {

@@ -8,7 +8,18 @@ import type { AnalyzeRequest, AnalyzeResponse } from "../../../lib/types";
 export async function POST(request: Request): Promise<NextResponse<AnalyzeResponse>> {
   try {
     const body: AnalyzeRequest = await request.json();
-    const { text, locale } = body;
+    const { text, locale, customApiKey } = body;
+
+    // HTTPSチェック（本番環境のみ）
+    if (customApiKey != null && customApiKey !== '' && process.env.NODE_ENV === 'production') {
+      const protocol = request.headers.get('x-forwarded-proto') ?? 'http';
+      if (protocol !== 'https') {
+        return NextResponse.json(
+          { success: false, error: 'CUSTOM_API_KEY_REQUIRES_HTTPS' },
+          { status: 403 }
+        );
+      }
+    }
 
     if (!text || text.trim().length === 0) {
       return NextResponse.json(
@@ -25,7 +36,7 @@ export async function POST(request: Request): Promise<NextResponse<AnalyzeRespon
       );
     }
 
-    const result = await analyzePost(text, locale || "ja");
+    const result = await analyzePost(text, locale ?? "ja", customApiKey);
 
     return NextResponse.json({ success: true, data: result });
   } catch (error) {

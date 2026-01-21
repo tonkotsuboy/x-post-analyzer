@@ -15,6 +15,14 @@
     "analyzing": "分析中...",
     "cancel": "分析を中止"
   },
+  "customApiKey": {
+    "toggle": "詳細設定",
+    "label": "Gemini APIキー",
+    "placeholder": "AIz...",
+    "warning": "独自のAPIキーを使用すると、あなたのAPIクォータとコストが消費されます。キーはメモリ内のみに保持され、ページリロード時にクリアされます。",
+    "httpsRequired": "本番環境ではHTTPS接続が必要です",
+    "helpText": "Gemini APIキーを入力してください（空欄の場合はデフォルトキーを使用）"
+  },
   "score": {
     "title": "総合スコア",
     "grade": "グレード",
@@ -56,6 +64,10 @@
     "button": "ツイートする",
     "success": "投稿画面を開きました"
   },
+  "share": {
+    "button": "結果をXでシェア",
+    "text": "私のポストをXのアルゴリズムで分析したら{score}点（{grade}ランク）でした！\n\nあなたのポストはどう？\n\nhttps://x.kano.codes #XPostAnalyzer"
+  },
   "error": {
     "empty": "投稿内容を入力してください",
     "tooLong": "280文字以内で入力してください",
@@ -65,6 +77,8 @@
     "rateLimitExceeded": "リクエスト上限に達しました。しばらくしてから再試行してください",
     "networkError": "ネットワークエラーが発生しました。接続を確認してください",
     "analysisFailed": "分析に失敗しました。もう一度お試しください",
+    "customApiKeyInvalid": "カスタムAPIキーが無効です",
+    "customApiKeyRequiresHttps": "カスタムAPIキーの使用にはHTTPS接続が必要です",
     "retry": "再試行"
   },
   "language": {
