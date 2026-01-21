@@ -12,3 +12,27 @@
   justify-content: center;
   padding: 2rem;
 }
+
+.shareButtonWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.githubLink {
+  position: fixed;
+  inset: auto 1rem 1rem auto;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-6));
+  color: light-dark(var(--mantine-color-dark-9), var(--mantine-color-gray-0));
+  transition: transform 0.2s ease, background 0.2s ease;
+
+  &:hover {
+    transform: scale(1.1);
+    background: light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-5));
+  }
+}

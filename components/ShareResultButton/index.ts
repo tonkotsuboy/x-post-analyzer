@@ -1,0 +1,1 @@
+export { ShareResultButton } from "./ShareResultButton";

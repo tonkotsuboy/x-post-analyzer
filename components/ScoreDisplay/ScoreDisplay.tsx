@@ -2,11 +2,16 @@
 
 import { Badge, Box, Group, RingProgress, Stack, Text, Title } from "@mantine/core";
 import { useTranslations } from "next-intl";
-import type { FC } from "react";
+
+import { ShareResultButton } from "../ShareResultButton";
 
 import styles from "./ScoreDisplay.module.css";
 
 import type { Grade } from "../../lib/types";
+import type { FC } from "react";
+
+
+
 
 interface ScoreDisplayProps {
   totalScore: number;
@@ -62,6 +67,7 @@ export const ScoreDisplay: FC<ScoreDisplayProps> = ({ totalScore, grade }) => {
             {grade}
           </Badge>
         </Group>
+        <ShareResultButton score={totalScore} grade={grade} />
       </Stack>
     </Box>
   );
