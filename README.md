@@ -104,13 +104,6 @@ npm run knip
 └── i18n/             # 国際化設定
 ```
 
-## コーディング規約
-
-- コンポーネントは`const Component: FC = () => {}`形式で記述
-- `React.ReactNode`ではなく`type { FC, ReactNode } from 'react'`を使用
-- ESLintルールに従う（アロー関数コンポーネントを強制）
-- インラインスタイルは禁止（CSS Modulesを使用）
-
 ## ライセンス
 
 MIT
