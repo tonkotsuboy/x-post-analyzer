@@ -73,3 +73,19 @@ export interface AnalyzeResponse {
   data?: AnalysisResult;
   error?: string;
 }
+
+// SSE Streaming Types
+export type AnalysisPhase =
+  | 'start'
+  | 'parsing'
+  | 'calculating'
+  | 'generating'
+  | 'complete'
+  | 'error';
+
+export interface SSEEvent {
+  phase: AnalysisPhase;
+  progress: number;
+  data?: AnalysisResult;
+  error?: string;
+}
