@@ -11,6 +11,7 @@ import {
   Title,
 } from "@mantine/core";
 import { useTranslations } from "next-intl";
+import type { FC } from "react";
 
 import { TweetButton } from "../TweetButton";
 
@@ -23,10 +24,10 @@ interface ImprovementsProps {
   improvedVersions: ImprovedVersion[];
 }
 
-export function Improvements({
+export const Improvements: FC<ImprovementsProps> = ({
   improvements,
   improvedVersions,
-}: ImprovementsProps): React.ReactNode {
+}) => {
   const t = useTranslations("improvements");
 
   return (
@@ -90,4 +91,4 @@ export function Improvements({
       </Stack>
     </Box>
   );
-}
+};

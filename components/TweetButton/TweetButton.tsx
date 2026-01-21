@@ -2,6 +2,7 @@
 
 import { Button } from "@mantine/core";
 import { useTranslations } from "next-intl";
+import type { FC } from "react";
 
 import { getGraphemeCount } from "../../lib/utils";
 
@@ -11,7 +12,7 @@ interface TweetButtonProps {
   text: string;
 }
 
-export function TweetButton({ text }: TweetButtonProps): React.ReactNode {
+export const TweetButton: FC<TweetButtonProps> = ({ text }) => {
   const t = useTranslations("tweet");
 
   const handleTweet = (): void => {
@@ -31,4 +32,4 @@ export function TweetButton({ text }: TweetButtonProps): React.ReactNode {
       {t("button")}
     </Button>
   );
-}
+};

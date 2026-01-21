@@ -2,6 +2,7 @@
 
 import { Badge, Box, Group, RingProgress, Stack, Text, Title } from "@mantine/core";
 import { useTranslations } from "next-intl";
+import type { FC } from "react";
 
 import styles from "./ScoreDisplay.module.css";
 
@@ -21,7 +22,7 @@ const gradeColors: Record<Grade, string> = {
   F: "red",
 };
 
-export function ScoreDisplay({ totalScore, grade }: ScoreDisplayProps): React.ReactNode {
+export const ScoreDisplay: FC<ScoreDisplayProps> = ({ totalScore, grade }) => {
   const t = useTranslations("score");
 
   const scoreColor =
@@ -64,4 +65,4 @@ export function ScoreDisplay({ totalScore, grade }: ScoreDisplayProps): React.Re
       </Stack>
     </Box>
   );
-}
+};

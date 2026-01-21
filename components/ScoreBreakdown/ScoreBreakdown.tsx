@@ -12,6 +12,7 @@ import {
   Title,
 } from "@mantine/core";
 import { useTranslations } from "next-intl";
+import type { FC } from "react";
 
 import styles from "./ScoreBreakdown.module.css";
 
@@ -64,7 +65,7 @@ const tiers: TierConfig[] = [
   },
 ];
 
-function ScoreRow({ item, label }: { item: ScoreItem; label: string }): React.ReactNode {
+const ScoreRow: FC<{ item: ScoreItem; label: string }> = ({ item, label }) => {
   const percentage = (item.score / item.max) * 100;
   const color =
     percentage >= 80 ? "green" : percentage >= 50 ? "yellow" : "red";
@@ -89,12 +90,12 @@ function ScoreRow({ item, label }: { item: ScoreItem; label: string }): React.Re
       </Table.Td>
     </Table.Tr>
   );
-}
+};
 
-export function ScoreBreakdown({
+export const ScoreBreakdown: FC<ScoreBreakdownProps> = ({
   breakdown,
   penalties,
-}: ScoreBreakdownProps): React.ReactNode {
+}) => {
   const t = useTranslations("score");
   const tBreakdown = useTranslations("breakdown");
 
@@ -192,4 +193,4 @@ export function ScoreBreakdown({
       </Accordion>
     </Box>
   );
-}
+};

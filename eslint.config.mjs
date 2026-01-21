@@ -156,6 +156,13 @@ const eslintConfig = defineConfig([
       "no-inline-styles/no-inline-styles": "error",
 
       // React rules
+      "react/function-component-definition": [
+        "error",
+        {
+          namedComponents: "arrow-function",
+          unnamedComponents: "arrow-function",
+        },
+      ],
       "react/jsx-curly-brace-presence": "error",
       "react/prop-types": "off",
       "react/react-in-jsx-scope": "off",

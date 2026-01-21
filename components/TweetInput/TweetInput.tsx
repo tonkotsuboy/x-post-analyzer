@@ -2,6 +2,7 @@
 
 import { Box, Button, Group, Text, Textarea } from "@mantine/core";
 import { useTranslations } from "next-intl";
+import type { FC } from "react";
 
 import { getGraphemeCount, MAX_TWEET_LENGTH } from "../../lib/utils";
 
@@ -14,12 +15,12 @@ interface TweetInputProps {
   isLoading: boolean;
 }
 
-export function TweetInput({
+export const TweetInput: FC<TweetInputProps> = ({
   value,
   onChange,
   onAnalyze,
   isLoading,
-}: TweetInputProps): React.ReactNode {
+}) => {
   const t = useTranslations("input");
   const charCount = getGraphemeCount(value);
   const isOverLimit = charCount > MAX_TWEET_LENGTH;
@@ -56,4 +57,4 @@ export function TweetInput({
       </Group>
     </Box>
   );
-}
+};

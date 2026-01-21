@@ -18,6 +18,7 @@ import { useEffect, useRef, useState, useTransition } from "react";
 
 import { Improvements } from "../../components/Improvements";
 import { LanguageSwitcher } from "../../components/LanguageSwitcher";
+import { SamplePosts } from "../../components/SamplePosts/SamplePosts";
 import { ScoreBreakdown } from "../../components/ScoreBreakdown";
 import { ScoreDisplay } from "../../components/ScoreDisplay";
 import { TweetInput } from "../../components/TweetInput";
@@ -147,6 +148,8 @@ export default function HomePage(): React.ReactNode {
           </Group>
 
           <Divider />
+
+          <SamplePosts />
 
           <TweetInput
             value={text}

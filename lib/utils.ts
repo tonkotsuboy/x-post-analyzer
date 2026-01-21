@@ -11,6 +11,6 @@ export function getGraphemeCount(text: string): number {
 }
 
 /**
- * 文字数制限の最大値
+ * 文字数制限の最大値（API課金対策のため2000文字に制限）
  */
-export const MAX_TWEET_LENGTH = 280;
+export const MAX_TWEET_LENGTH = 2000;
