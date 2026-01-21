@@ -76,5 +76,8 @@
     "step3": "Checking penalty factors...",
     "step4": "Generating improvement suggestions...",
     "step5": "Computing final score..."
+  },
+  "samples": {
+    "title": "Sample Analysis Results"
   }
 }

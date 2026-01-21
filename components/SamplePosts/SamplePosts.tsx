@@ -1,7 +1,7 @@
 "use client";
 
-import { SimpleGrid, Image } from "@mantine/core";
-import { useLocale } from "next-intl";
+import { SimpleGrid, Image, Title } from "@mantine/core";
+import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
 import type { FC } from "react";
 import { ImageModal } from "./ImageModal";
@@ -9,16 +9,20 @@ import styles from "./SamplePosts.module.css";
 
 export const SamplePosts: FC = () => {
   const locale = useLocale();
+  const t = useTranslations("samples");
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
-  const sampleImages = [1, 2, 3, 4].map(
+  const sampleImages = [2, 3, 4].map(
     (num) => `/samples/${locale}/${locale}_sample_${num}.png`
   );
 
   return (
     <>
+      <Title order={3} mb="md">
+        {t("title")}
+      </Title>
       <SimpleGrid
-        cols={{ base: 1, sm: 2, md: 4 }}
+        cols={{ base: 1, sm: 2, md: 3 }}
         spacing="sm"
         className={styles.grid}
       >
