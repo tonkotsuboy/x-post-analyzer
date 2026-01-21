@@ -10,11 +10,23 @@ import styles from "./SamplePosts.module.css";
 export const SamplePosts: FC = () => {
   const locale = useLocale();
   const t = useTranslations("samples");
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
   const sampleImages = [2, 3, 4].map(
     (num) => `/samples/${locale}/${locale}_sample_${num}.png`
   );
+
+  const handleNext = (): void => {
+    if (selectedIndex === null) return;
+    setSelectedIndex((selectedIndex + 1) % sampleImages.length);
+  };
+
+  const handlePrevious = (): void => {
+    if (selectedIndex === null) return;
+    setSelectedIndex(
+      (selectedIndex - 1 + sampleImages.length) % sampleImages.length
+    );
+  };
 
   return (
     <>
@@ -32,15 +44,19 @@ export const SamplePosts: FC = () => {
             src={src}
             alt={`Sample post ${index + 1}`}
             className={styles.thumbnail}
-            onClick={() => setSelectedImage(src)}
+            onClick={() => setSelectedIndex(index)}
             style={{ cursor: "pointer" }}
           />
         ))}
       </SimpleGrid>
 
       <ImageModal
-        imageSrc={selectedImage}
-        onClose={() => setSelectedImage(null)}
+        imageSrc={selectedIndex !== null ? sampleImages[selectedIndex] : null}
+        onClose={() => setSelectedIndex(null)}
+        onNext={handleNext}
+        onPrevious={handlePrevious}
+        canGoPrevious={selectedIndex !== null}
+        canGoNext={selectedIndex !== null}
       />
     </>
   );
