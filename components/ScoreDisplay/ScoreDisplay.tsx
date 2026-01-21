@@ -3,7 +3,7 @@
 import { Badge, Box, Group, RingProgress, Stack, Text, Title } from "@mantine/core";
 import { useTranslations } from "next-intl";
 
-import { ShareResultButton } from "../ShareResultButton";
+import { ShareResultButton } from "../ShareResultButton/ShareResultButton";
 
 import styles from "./ScoreDisplay.module.css";
 

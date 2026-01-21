@@ -13,7 +13,7 @@ import {
 import { useTranslations } from "next-intl";
 
 
-import { TweetButton } from "../TweetButton";
+import { TweetButton } from "../TweetButton/TweetButton";
 
 import styles from "./Improvements.module.css";
 

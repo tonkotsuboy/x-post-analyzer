@@ -85,11 +85,11 @@
     "switch": "日本語"
   },
   "progress": {
-    "step1": "Analyzing your post...",
-    "step2": "Calculating engagement metrics...",
-    "step3": "Checking penalty factors...",
-    "step4": "Generating improvement suggestions...",
-    "step5": "Computing final score..."
+    "start": "Starting analysis...",
+    "parsing": "Analyzing your post...",
+    "calculating": "Calculating scores...",
+    "generating": "Generating improvements...",
+    "complete": "Analysis complete!"
   },
   "samples": {
     "title": "Sample Analysis Results"
