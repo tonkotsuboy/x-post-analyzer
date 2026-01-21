@@ -20,12 +20,12 @@
 
 .githubLink {
   position: fixed;
-  inset: auto 1rem 1rem auto;
-  z-index: 100;
+  inset: auto max(1rem, env(safe-area-inset-right)) max(1rem, env(safe-area-inset-bottom)) auto;
+  z-index: var(--z-fixed);
   display: grid;
   place-items: center;
   width: 3rem;
-  height: 3rem;
+  aspect-ratio: 1;
   border-radius: 50%;
   background: light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-6));
   color: light-dark(var(--mantine-color-dark-9), var(--mantine-color-gray-0));

@@ -3,6 +3,9 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* z-index scale */
+  --z-fixed: 50;
 }
 
 @media (prefers-color-scheme: dark) {

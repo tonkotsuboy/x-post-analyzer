@@ -68,6 +68,7 @@ export const ImageModal: FC<ImageModalProps> = ({
               radius="xl"
               onClick={onPrevious}
               className={`${styles.navigationButton} ${styles.previousButton}`}
+              aria-label="Previous image"
             >
               <IconChevronLeft size={24} />
             </ActionIcon>
@@ -80,6 +81,7 @@ export const ImageModal: FC<ImageModalProps> = ({
               radius="xl"
               onClick={onNext}
               className={`${styles.navigationButton} ${styles.nextButton}`}
+              aria-label="Next image"
             >
               <IconChevronRight size={24} />
             </ActionIcon>
