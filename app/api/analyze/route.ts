@@ -28,10 +28,14 @@ export async function POST(request: Request): Promise<NextResponse<AnalyzeRespon
     return NextResponse.json({ success: true, data: result });
   } catch (error) {
     console.error("Analysis error:", error);
+
+    // エラーコードをそのまま返す（フロントエンドで翻訳される）
+    const errorCode = error instanceof Error ? error.message : "ANALYSIS_FAILED";
+
     return NextResponse.json(
       {
         success: false,
-        error: error instanceof Error ? error.message : "Unknown error",
+        error: errorCode,
       },
       { status: 500 }
     );

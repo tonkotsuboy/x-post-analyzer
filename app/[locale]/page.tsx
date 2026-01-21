@@ -34,6 +34,19 @@ const PROGRESS_STEPS = [
   { progress: 90, key: "step5" },
 ];
 
+// エラーコードを翻訳キーに変換
+function getErrorTranslationKey(errorCode: string): string {
+  const errorMap: Record<string, string> = {
+    API_KEY_NOT_CONFIGURED: "apiKeyNotConfigured",
+    API_KEY_INVALID: "apiKeyInvalid",
+    RATE_LIMIT_EXCEEDED: "rateLimitExceeded",
+    NETWORK_ERROR: "networkError",
+    ANALYSIS_FAILED: "analysisFailed",
+  };
+
+  return errorMap[errorCode] ?? "apiError";
+}
+
 export default function HomePage(): React.ReactNode {
   const t = useTranslations("header");
   const tInput = useTranslations("input");
@@ -86,7 +99,10 @@ export default function HomePage(): React.ReactNode {
         if (data.success && data.data) {
           setResult(data.data);
         } else {
-          setError(data.error ?? tError("apiError"));
+          // エラーコードを翻訳キーに変換
+          const errorCode = data.error ?? "ANALYSIS_FAILED";
+          const errorKey = getErrorTranslationKey(errorCode);
+          setError(tError(errorKey));
         }
       } catch (err) {
         if (err instanceof Error && err.name === "AbortError") {

@@ -1,11 +1,11 @@
 {
   "metadata": {
-    "title": "X Post Analyzer - ツイートのバズり度を分析",
+    "title": "X Post Analyzer - Xのおすすめタイムラインに表示される可能性を分析",
     "description": "Xのアルゴリズムに基づいてあなたの投稿のバズり度を採点し、改善案を提示します"
   },
   "header": {
     "title": "X Post Analyzer",
-    "subtitle": "ツイートのバズり度を分析",
+    "subtitle": "Xのおすすめタイムラインに表示される可能性を分析",
     "basedOn": "基づく："
   },
   "input": {
@@ -60,6 +60,11 @@
     "empty": "投稿内容を入力してください",
     "tooLong": "280文字以内で入力してください",
     "apiError": "分析中にエラーが発生しました",
+    "apiKeyNotConfigured": "APIキーが設定されていません",
+    "apiKeyInvalid": "APIキーが無効です",
+    "rateLimitExceeded": "リクエスト上限に達しました。しばらくしてから再試行してください",
+    "networkError": "ネットワークエラーが発生しました。接続を確認してください",
+    "analysisFailed": "分析に失敗しました。もう一度お試しください",
     "retry": "再試行"
   },
   "language": {

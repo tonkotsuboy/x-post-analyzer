@@ -18,24 +18,41 @@ export async function analyzePost(
   locale: string
 ): Promise<AnalysisResult> {
   if (!genAI) {
-    throw new Error("Gemini API key is not configured");
+    throw new Error("API_KEY_NOT_CONFIGURED");
   }
 
-  const model = genAI.getGenerativeModel({
-    model: "gemini-2.5-flash",
-    generationConfig: {
-      responseMimeType: "application/json",
-      temperature: 0.7,
-    },
-  });
+  try {
+    const model = genAI.getGenerativeModel({
+      model: "gemini-2.5-flash",
+      generationConfig: {
+        responseMimeType: "application/json",
+        temperature: 0.7,
+      },
+    });
 
-  const prompt = createScoringPrompt(text, locale);
+    const prompt = createScoringPrompt(text, locale);
 
-  const result = await model.generateContent(prompt);
-  const response = result.response;
-  const responseText = response.text();
+    const result = await model.generateContent(prompt);
+    const response = result.response;
+    const responseText = response.text();
 
-  const analysis: AnalysisResult = JSON.parse(responseText);
+    const analysis: AnalysisResult = JSON.parse(responseText);
 
-  return analysis;
+    return analysis;
+  } catch (error) {
+    // Gemini APIのエラーを適切なエラーコードに変換
+    if (error instanceof Error) {
+      if (error.message.includes("API key")) {
+        throw new Error("API_KEY_INVALID");
+      }
+      if (error.message.includes("quota") || error.message.includes("rate limit")) {
+        throw new Error("RATE_LIMIT_EXCEEDED");
+      }
+      if (error.message.includes("network") || error.message.includes("fetch")) {
+        throw new Error("NETWORK_ERROR");
+      }
+    }
+    // その他のエラーは汎用エラーとして扱う
+    throw new Error("ANALYSIS_FAILED");
+  }
 }

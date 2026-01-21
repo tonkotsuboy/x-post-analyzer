@@ -1,11 +1,11 @@
 {
   "metadata": {
-    "title": "X Post Analyzer - Analyze Tweet Viral Potential",
+    "title": "X Post Analyzer - Analyze X Timeline Recommendation Potential",
     "description": "Score your post's viral potential based on X's algorithm and get improvement suggestions"
   },
   "header": {
     "title": "X Post Analyzer",
-    "subtitle": "Analyze Tweet Viral Potential",
+    "subtitle": "Analyze X Timeline Recommendation Potential",
     "basedOn": "Based on:"
   },
   "input": {
@@ -60,6 +60,11 @@
     "empty": "Please enter your post content",
     "tooLong": "Please keep it under 280 characters",
     "apiError": "An error occurred during analysis",
+    "apiKeyNotConfigured": "API key is not configured",
+    "apiKeyInvalid": "API key is invalid",
+    "rateLimitExceeded": "Rate limit exceeded. Please try again later",
+    "networkError": "Network error occurred. Please check your connection",
+    "analysisFailed": "Analysis failed. Please try again",
     "retry": "Retry"
   },
   "language": {
